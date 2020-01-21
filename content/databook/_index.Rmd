@@ -1,0 +1,35 @@
+---
+title: Student Data Book
+author: Betsy Rosalen
+date: '2019-12-19'
+slug: /
+categories: []
+tags:
+  - databook
+---
+
+
+## CURRENT STUDENT DATA BOOK BY SUBJECT
+
+- Accountability
+- Admissions (New Students) – Fall 2018
+- Degrees Granted – 2018-2019
+- [Enrollment – Fall 2018 - datatable](2018-enrollment)
+- [Enrollment – Fall 2018 - other options](2018-enrollment-other-options)
+- Race/Ethnicity – Fall 2018
+- Retention & Graduation – Fall 2018
+- SEEK/College Discovery – Fall 2018
+- STEM Enrollment & Degrees Granted – Fall 2017/2016-2017
+- Student Profile / Demographic Information – Fall 2016
+
+## HISTORICAL STUDENT DATA BOOK TABLES – ALL SEMESTERS
+
+- Enrollment
+- Admissions(New Students)
+- Degree Granted
+- Race/Ethinicity
+
+## STUDENT DATA BOOK ARCHIVE
+
+- 2003-2017
+- 1967-1998

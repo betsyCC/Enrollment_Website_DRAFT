@@ -1,0 +1,17 @@
+---
+title: Home
+author: Betsy Rosalen
+date: '2019-12-23'
+slug: /
+categories: []
+tags:
+  - databook
+---
+
+
+## [Current Student Data Book By Subject](databook)
+
+## Historical Student Data Book Tables – All Semesters
+
+## Student Data Book Archive
+

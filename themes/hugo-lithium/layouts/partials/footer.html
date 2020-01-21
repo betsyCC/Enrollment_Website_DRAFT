@@ -1,0 +1,20 @@
+      <footer class="footer">
+        <ul class="footer-links">
+		  <li>
+            <a href="https://rstudio.com/" class="footer-links-kudos">Made in RStudio <img src="{{ "images/RStudio-logo.png" | relURL }}" alt="Img link to RStudio website" width="26" height="26"></a>
+          </li>
+		  <li>
+            <a href="https://bookdown.org/yihui/blogdown/" class="footer-links-kudos">with blogdown <img src="{{ "images/blogdown-logo.png" | relURL }}" alt="Img link to blogdown website" width="26" height="26"></a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">and Hugo <img src="{{ "images/hugo-logo.png" | relURL }}" alt="Img link to Hugo website" width="26" height="26"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    {{ partial "footer_highlightjs" . }}
+    {{ partial "footer_mathjax" . }}
+    {{ template "_internal/google_analytics.html" . }}
+  </body>
+</html>
