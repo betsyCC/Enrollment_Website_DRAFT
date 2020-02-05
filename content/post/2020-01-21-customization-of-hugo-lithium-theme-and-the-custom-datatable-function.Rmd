@@ -1,0 +1,88 @@
+---
+title: Customization of Hugo Lithium theme and the datatable function
+author: Betsy Rosalen
+date: '2020-01-21'
+slug: customization-of-Hugo-Lithium-and-datatable-function
+categories: []
+tags: []
+---
+
+In the first blog post, [How this site was created...](https://betsycc.github.io/OIRA_Web_Reports/2019/12/26/how-this-site-was-created/), I very briefly described the tools I used to create this draft website.  Since then a *lot* of additional customizations have been made to get the draft to a more finished working state.  I wanted to document the basic steps taken and files that needed to be changed in order to customize the tools used to create this site before I forget so that others who are interested in doing something similar or who want to use this draft and make further customizations to suit their own needs will have a starting point to work from.
+
+Before I do that though, just a note that I am not by any means an expert in developing Hugo themes and still am not quite sure how I got this working, and why it works, but it does.  So take everything here with a grain of salt and I highly recommend that you do yourself a favor and read the excellent [blogdown documentation](https://bookdown.org/yihui/blogdown/) (especially chapter 2 on Hugo) to get a basic understanding of how Hugo themes work before trying to implement any of this.  
+
+The Hugo Lithium theme files can be found in the folder where you created your project (and installed the Hugo theme) in the `/themes/hugo-lithium` subfolder.  Within this subfolder is the `/layouts` folder, where you can find the theme layouts which determine how Hugo creates your webpage structure, and the `\static\css` folder where you can find the CSS files that control how web browsers style and display your HTML elements.  The layouts control things like the header and footer of your pages and how links to new pages are added to the blog.  The CSS controls things like text and background colors, text alignment and font sizes, etc...  I will write about the CSS at the end of this post.  First I will describe how to get your pages structured the way you want them by altering the Hugo layout files.
+
+## Customizing the Hugo theme 
+
+### layouts
+
+In order to create a website that isn't focused on the blog (where new pages are automatically treated like blog posts) I had to change the `list.html` file in the `/themes/hugo-lithium/layouts/_default` folder so that only files added to the `posts` folder would be treated like blog posts and automatically added to the links in the archive on the blog webpage.  The code to accomplish this was just adding a conditional statement `(where $pages "Section" "==" "post")` to the `range` in the `<div class="archive">` tag.  So only pages in the `posts` folder are added to the archive list on the webapge.  The full code can be seen on GitHub at <https://github.com/betsyCC/Enrollment_Website_DRAFT/blob/master/themes/hugo-lithium/layouts/_default/list.html>.
+
+Additionally the `footer.html` file in the `/themes/hugo-lithium/layouts/partials` folder was changed from this:
+
+```
+      <footer class="footer-orig">
+        <ul class="footer-links">
+          <li>
+            <a href="{{ .Site.RSSLink | relURL }}" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="{{ "images/hugo-logo.png" | relURL }}" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    {{ partial "footer_highlightjs" . }}
+    {{ partial "footer_mathjax" . }}
+    {{ template "_internal/google_analytics.html" . }}
+  </body>
+</html>
+```
+
+to this:
+
+```
+      <footer class="footer">
+        <ul class="footer-links">
+		  <li>
+            <a href="https://rstudio.com/" class="footer-links-kudos">Made in RStudio <img src="{{ "images/RStudio-logo.png" | relURL }}" alt="Img link to RStudio website" width="26" height="26"></a>
+          </li>
+		  <li>
+            <a href="https://bookdown.org/yihui/blogdown/" class="footer-links-kudos">with blogdown <img src="{{ "images/blogdown-logo.png" | relURL }}" alt="Img link to blogdown website" width="26" height="26"></a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">and Hugo <img src="{{ "images/hugo-logo.png" | relURL }}" alt="Img link to Hugo website" width="26" height="26"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    {{ partial "footer_highlightjs" . }}
+    {{ partial "footer_mathjax" . }}
+    {{ template "_internal/google_analytics.html" . }}
+  </body>
+</html>
+
+```
+
+The RSS link was removed and details about the additional tools used to create the site (RStudio and blogdown) were added.  
+
+I think that was the extent of the changes made to the layout files, although I may have forgotten something.
+
+
+## Customizing the datatable function 
+
+I may not ever actually addd this section since the original creator of the datatable function has since turned it into an R Package, [accessibleshiny](https://github.com/davidruvolo51/accessibleshiny), that you can install using the remotes package.  
+
+```
+install.packages("remotes")
+remotes::install_github("davidruvolo51/accessibleshiny")
+```
+
+All of my customizations were added as new features to the datatable functions so you don't have to do what I did.  
+
+## Customizing the CSS
+
+I will add a new blog post on this later once I have changed my code over to use the new `accessibleshiny` package and fixed my css accordingly...
